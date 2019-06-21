@@ -1,10 +1,12 @@
 """OpenAQ Air Quality Dashboard with Flask."""
 from flask import Flask,  render_template
 #import openaq
+import os
 from flask_sqlalchemy import SQLAlchemy
 
 APP = Flask(__name__)
-APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+#APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+APP.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 APP.config['ENV'] = 'debug'
 DB = SQLAlchemy(APP)
