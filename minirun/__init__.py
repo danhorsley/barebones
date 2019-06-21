@@ -70,7 +70,7 @@ def latlong():
     """Pull fresh data from Open AQ including latitude and longitude."""
     #DB.drop_all()
     DB.create_all()
-    api = openaq.OpenAQ()
+    #api = openaq.OpenAQ()
     #status, body = api.measurements(city='Los Angeles', parameter='pm25')
     r = requests.get('https://api.openaq.org/v1/measurements')
     body = r.json()
