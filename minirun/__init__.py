@@ -38,8 +38,8 @@ def root():
     for r in ret_list:
         pretty_list.append('Date : {}, Time : {} and Value : {}'.format(r[0][:10],
                                         r[0][11:19],r[1]))
-    return str(ret_list)
-    #return render_template('base.html', datas=pretty_list)
+    #return str(ret_list)
+    return render_template('base.html', datas=pretty_list)
 
 @APP.route('/refresh')
 def refresh():
