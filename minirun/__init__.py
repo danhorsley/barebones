@@ -79,8 +79,8 @@ def latlong():
     for res in body['results']:
         _=(str(res[u'date'][u'utc']), #datetime
             str(res[u'value']),     #value
-            str(res[u'latitude']),     #latitude
-            str(res[u'longitude']))     #longitude
+            str(res[u'coordinates'][u'latitude']),     #latitude
+            str(res[u'coordinates'][u'longitude']))     #longitude
         tup_list.append(_)
         for tup in tup_list:
             db_data = Record(datetime = tup[0],value = tup[1],
